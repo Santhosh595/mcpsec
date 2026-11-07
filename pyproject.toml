@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcpsec"
+version = "0.1.0"
+description = "Static security audit for MCP (Multi-Tool Configuration Protocol) server configurations"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = ["security", "mcp", "supply-chain", "audit", "cli"]
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Topic :: Security",
+]
+
+[project.scripts]
+mcpsec = "mcpsec.cli:main"
+
+[tool.setuptools]
+packages = ["mcpsec", "mcpsec.checks"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
