@@ -13,7 +13,10 @@ from __future__ import annotations
 
 import json
 import re
-import tomllib
+try:
+    import tomllib
+except ModuleNotFoundError:  # Python 3.10: stdlib tomllib exists from 3.11
+    import tomli as tomllib  # type: ignore
 from pathlib import Path
 
 from ..findings import Finding
