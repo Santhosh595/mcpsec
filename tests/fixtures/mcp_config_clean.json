@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "safe-server": {
+      "command": "npx",
+      "args": ["-y", "some-mcp-server"],
+      "env": {
+        "OPENAI_API_KEY": "${OPENAI_API_KEY}",
+        "GITHUB_TOKEN": "$GITHUB_TOKEN",
+        "CUSTOM_TOKEN": "your-api-key-here"
+      },
+      "tools": ["read_file", "list_directory"],
+      "permissions": ["read"],
+      "url": "https://mcp.example.com/sse",
+      "host": "127.0.0.1",
+      "transport": "sse"
+    }
+  }
+}
